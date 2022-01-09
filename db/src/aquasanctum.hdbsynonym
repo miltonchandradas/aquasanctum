@@ -1,0 +1,62 @@
+{
+    "H2O_TECHNICIANS_SYNONYM": {
+        "target": {
+            "object": "H2O.TECHNICIANS",
+            "schema": "D069343"
+        }
+    },
+    "H2O_CON_FLOWMETERS_SYNONYM": {
+        "target": {
+            "object": "H2O.CON_FLOWMETERS",
+            "schema": "D069343"
+        }
+    },
+    "H2O_CUST_ADDITIONS_SYNONYM": {
+        "target": {
+            "object": "H2O.CUST_ADDITIONS",
+            "schema": "D069343"
+        }
+    },
+    "H2O_FLOWMETERS_SYNONYM": {
+        "target": {
+            "object": "H2O.FLOWMETERS",
+            "schema": "D069343"
+        }
+    },
+    "H2O_FLOWVALUES_SYNONYM": {
+        "target": {
+            "object": "H2O.FLOWVALUES",
+            "schema": "D069343"
+        }
+    },
+    "H2O_FLOWVALUESNEW_SYNONYM": {
+        "target": {
+            "object": "H2O.FLOWVALUESNEW",
+            "schema": "D069343"
+        }
+    },
+    "H2O_LEAKAGE_SYNONYM": {
+        "target": {
+            "object": "H2O.LEAKAGE",
+            "schema": "D069343"
+        }
+    },
+    "H2O_LOCATIONS_SYNONYM": {
+        "target": {
+            "object": "H2O.LOCATIONS",
+            "schema": "D069343"
+        }
+    },
+    "H2O_FLOWMETER_DATA_METRICS_SYNONYM": {
+        "target": {
+            "object": "H2O/H2O_FLOWMETER_DATA_METRICS",
+            "schema": "_SYS_BIC"
+        }
+    },
+    "H2O_CON_LEAKAGE_DATA_SYNONYM": {
+        "target": {
+            "object": "H2O/H2O_CON_LEAKAGE_DATA",
+            "schema": "_SYS_BIC"
+        }
+    }
+}
