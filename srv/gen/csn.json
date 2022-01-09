@@ -1,6 +1,6 @@
 {
   "definitions": {
-    "AQUASERVICE_FLOWMETER_DATA_METRICS": {
+    "AQUA_FLOWMETER_DATA_METRICS": {
       "kind": "entity",
       "@cds.persistence.exists": true,
       "elements": {
@@ -88,7 +88,7 @@
         }
       }
     },
-    "AQUASERVICE_FLOWMETERS": {
+    "AQUA_FLOWMETERS": {
       "kind": "entity",
       "@cds.persistence.exists": true,
       "elements": {
@@ -158,7 +158,77 @@
         }
       }
     },
-    "AQUASERVICE_CON_FLOWMETERS": {
+    "AQUA_CHILDFLOWMETERS": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "elements": {
+        "FmID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 16
+        },
+        "FmDesc": {
+          "type": "cds.String",
+          "length": 80
+        },
+        "FmType": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmZone": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmCity": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmState": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmCountry": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmLatitude": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmLongitude": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "SourceFmID": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "TechnicianID": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CURRENCY": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "WATERFLOWUOM": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "END_BRANCH": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "CreatedBy": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "CreatedTimeStamp": {
+          "type": "cds.DateTime"
+        }
+      }
+    },
+    "AQUA_CON_FLOWMETERS": {
       "kind": "entity",
       "@cds.persistence.exists": true,
       "elements": {
@@ -241,7 +311,7 @@
         }
       }
     },
-    "AQUASERVICE_TECHNICIANS": {
+    "AQUA_TECHNICIANS": {
       "kind": "entity",
       "@cds.persistence.exists": true,
       "elements": {
@@ -279,7 +349,7 @@
         }
       }
     },
-    "AQUASERVICE_CON_LEAKAGE_DATA": {
+    "AQUA_CON_LEAKAGE_DATA": {
       "kind": "entity",
       "@cds.persistence.exists": true,
       "elements": {
@@ -393,16 +463,15 @@
       "@source": "aquasanctum_service.cds",
       "kind": "service"
     },
-    "AQUASERVICE.FLOWMETER_DATA_METRICS": {
+    "AQUASERVICE.FlowmeterDataMetrics": {
       "kind": "entity",
       "@readonly": true,
-      "query": {
-        "SELECT": {
-          "from": {
-            "ref": [
-              "AQUASERVICE_FLOWMETER_DATA_METRICS"
-            ]
-          }
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_FLOWMETER_DATA_METRICS"
+          ],
+          "as": "AquaFlowMeterDataMetrics"
         }
       },
       "elements": {
@@ -492,13 +561,12 @@
     },
     "AQUASERVICE.Flowmeters": {
       "kind": "entity",
-      "query": {
-        "SELECT": {
-          "from": {
-            "ref": [
-              "AQUASERVICE_FLOWMETERS"
-            ]
-          }
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_FLOWMETERS"
+          ],
+          "as": "AquaFlowMeters"
         }
       },
       "elements": {
@@ -570,13 +638,12 @@
     },
     "AQUASERVICE.ChildFlowmeters": {
       "kind": "entity",
-      "query": {
-        "SELECT": {
-          "from": {
-            "ref": [
-              "AQUASERVICE_FLOWMETERS"
-            ]
-          }
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_CHILDFLOWMETERS"
+          ],
+          "as": "AquaChildFlowMeters"
         }
       },
       "elements": {
@@ -646,15 +713,14 @@
         }
       }
     },
-    "AQUASERVICE.CON_FLOWMETERS": {
+    "AQUASERVICE.ConFlowmeters": {
       "kind": "entity",
-      "query": {
-        "SELECT": {
-          "from": {
-            "ref": [
-              "AQUASERVICE_CON_FLOWMETERS"
-            ]
-          }
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_CON_FLOWMETERS"
+          ],
+          "as": "AquaConFlowMeters"
         }
       },
       "elements": {
@@ -737,15 +803,14 @@
         }
       }
     },
-    "AQUASERVICE.TECHNICIANS": {
+    "AQUASERVICE.Technicians": {
       "kind": "entity",
-      "query": {
-        "SELECT": {
-          "from": {
-            "ref": [
-              "AQUASERVICE_TECHNICIANS"
-            ]
-          }
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_TECHNICIANS"
+          ],
+          "as": "AquaTechnicians"
         }
       },
       "elements": {
@@ -783,15 +848,14 @@
         }
       }
     },
-    "AQUASERVICE.CON_LEAKAGE_DATA": {
+    "AQUASERVICE.ConLeakageData": {
       "kind": "entity",
-      "query": {
-        "SELECT": {
-          "from": {
-            "ref": [
-              "AQUASERVICE_CON_LEAKAGE_DATA"
-            ]
-          }
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_CON_LEAKAGE_DATA"
+          ],
+          "as": "AquaConLeakageData"
         }
       },
       "elements": {

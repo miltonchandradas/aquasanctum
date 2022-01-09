@@ -1,8 +1,0 @@
-[
-    "technicians.hdbview",
-    "flowmeters.hdbview",
-    "flowmeterdatametrics.hdbview",
-    "conleakagedata.hdbview",
-    "conflowmeters.hdbview",
-    "childflowmeters.hdbview"
-]

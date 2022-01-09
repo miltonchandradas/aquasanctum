@@ -7,22 +7,24 @@
 
 
 using {
-    AQUASERVICE_FLOWMETER_DATA_METRICS,
-    AQUASERVICE_FLOWMETERS,
-    AQUASERVICE_CON_FLOWMETERS,
-    AQUASERVICE_TECHNICIANS,
-    AQUASERVICE_CON_LEAKAGE_DATA
+    AQUA_FLOWMETER_DATA_METRICS as AquaFlowMeterDataMetrics,
+    AQUA_FLOWMETERS as AquaFlowMeters,
+    AQUA_CHILDFLOWMETERS as AquaChildFlowMeters,
+    AQUA_CON_FLOWMETERS as AquaConFlowMeters,
+    AQUA_TECHNICIANS as AquaTechnicians,
+    AQUA_CON_LEAKAGE_DATA as AquaConLeakageData
 
 } from '../db/schema.cds';
 
 service AQUASERVICE {
 
     @readonly
-    entity FLOWMETER_DATA_METRICS as SELECT FROM AQUASERVICE_FLOWMETER_DATA_METRICS;
+    entity FlowmeterDataMetrics as projection on AquaFlowMeterDataMetrics;
 
-    entity Flowmeters as SELECT FROM AQUASERVICE_FLOWMETERS;
-    entity ChildFlowmeters as SELECT FROM AQUASERVICE_FLOWMETERS;
-    entity CON_FLOWMETERS as SELECT FROM AQUASERVICE_CON_FLOWMETERS;
-    entity TECHNICIANS as SELECT FROM AQUASERVICE_TECHNICIANS;
-    entity CON_LEAKAGE_DATA as SELECT FROM AQUASERVICE_CON_LEAKAGE_DATA;
+    entity Flowmeters as projection on AquaFlowMeters;
+    entity ChildFlowmeters as projection on AquaChildFlowMeters;
+    entity ConFlowmeters as projection on AquaConFlowMeters;
+    entity Technicians as projection on AquaTechnicians;
+    entity ConLeakageData as projection on AquaConLeakageData;
+
 }

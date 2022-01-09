@@ -1,5 +1,5 @@
 @cds.persistence.exists
-entity![AQUASERVICE_FLOWMETER_DATA_METRICS]{
+entity![AQUA_FLOWMETER_DATA_METRICS]{
     key FmID              : String(16);
         FmDesc            : String(80);
         FmType            : String(40);
@@ -25,7 +25,7 @@ entity![AQUASERVICE_FLOWMETER_DATA_METRICS]{
 
 
 @cds.persistence.exists
-entity![AQUASERVICE_FLOWMETERS]{
+entity![AQUA_FLOWMETERS]{
     key FmID             : String(16);
         FmDesc           : String(80);
         FmType           : String(40);
@@ -45,7 +45,27 @@ entity![AQUASERVICE_FLOWMETERS]{
 }
 
 @cds.persistence.exists
-entity![AQUASERVICE_CON_FLOWMETERS]{
+entity AQUA_CHILDFLOWMETERS {
+    key FmID             : String(16);
+        FmDesc           : String(80);
+        FmType           : String(40);
+        FmZone           : String(40);
+        FmCity           : String(40);
+        FmState          : String(40);
+        FmCountry        : String(40);
+        FmLatitude       : String(40);
+        FmLongitude      : String(40);
+        SourceFmID       : String(16);
+        TechnicianID     : String(4);
+        CURRENCY         : String(3);
+        WATERFLOWUOM     : String(12);
+        END_BRANCH       : String(1);
+        CreatedBy        : String(40);
+        CreatedTimeStamp : DateTime;
+}
+
+@cds.persistence.exists
+entity![AQUA_CON_FLOWMETERS]{
     key ConFmID          : String(16);
         ConFmType        : String(40);
         ConFirstname     : String(80);
@@ -68,9 +88,9 @@ entity![AQUASERVICE_CON_FLOWMETERS]{
 }
 
 @cds.persistence.exists
-entity AQUASERVICE_TECHNICIANS {
+entity AQUA_TECHNICIANS {
 
-    key TechID              : String(4);
+    key ![TechID]              : String(4);
         ![TechFirstname]    : String(80);
         ![TechLastname]     : String(80);
         ![TechRole]         : String(80);
@@ -82,7 +102,7 @@ entity AQUASERVICE_TECHNICIANS {
 }
 
 @cds.persistence.exists
-entity![AQUASERVICE_CON_LEAKAGE_DATA]{
+entity![AQUA_CON_LEAKAGE_DATA]{
     key![FmID]           : String(16)    @title : 'FmID';
        ![TIMESTAMP]      : Timestamp     @title : 'TIMESTAMP';
        ![FMDESC]         : String(80)    @title : 'FMDESC';

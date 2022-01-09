@@ -1,4 +1,3 @@
-
 # auto generated wildcard
 db/.env
 # Logs
@@ -131,3 +130,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# added by cds deploy
+default-env.json
