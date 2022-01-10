@@ -1,0 +1,8 @@
+VIEW "AQUA_ZONE_NEW_CONNECTIONS" AS
+SELECT  
+    "Board" as BOARD,
+    "Zone" as ZONE,
+"Currency" as CURRENCY,
+"NewCustomerCount" as NEWCUSTOMERCOUNT,
+"RevIncrease" as REVINCREASE
+From "H2O_CON_ZONE_NEW_CONNECTIONS_SYNONYM"

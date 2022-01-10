@@ -1,0 +1,14 @@
+View "AQUA_ADMIN_NEW_CUST_CONNECTIONS" as 
+SELECT
+    "Board" as BOARD,
+    "Zone" as ZONE,
+    "City" as CITY,
+    "State" as STATE,
+"Country" as COUNTRY,
+"Month" as MONTH,
+"Year" as YEAR,
+"Currency" as CURRENCY,
+"CustAddKey" as CUSTADDKEY,
+"NewCustomerCount" as NEWCUSTOMERCOUNT,
+"RevIncrease" as REVINCREASE
+from "H2O_ADMIN_NEW_CUST_CONNECTIONS_SYNONYM"

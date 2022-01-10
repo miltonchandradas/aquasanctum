@@ -47,6 +47,12 @@
             "schema": "D069343"
         }
     },
+    "H2O_IOT_SYNONYM": {
+        "target": {
+            "object": "T_IOT_6EABC9F1651B15E2AAA3",
+            "schema": "D069343"
+        }
+    },
     "H2O_FLOWMETER_DATA_METRICS_SYNONYM": {
         "target": {
             "object": "H2O/H2O_FLOWMETER_DATA_METRICS",
@@ -56,6 +62,36 @@
     "H2O_CON_LEAKAGE_DATA_SYNONYM": {
         "target": {
             "object": "H2O/H2O_CON_LEAKAGE_DATA",
+            "schema": "_SYS_BIC"
+        }
+    },
+    "H2O_LATEST_LEAKAGE_DATA_SYNONYM": {
+        "target": {
+            "object": "H2O/H2O_LATEST_LEAKAGE_DATA",
+            "schema": "_SYS_BIC"
+        }
+    },
+    "H2O_CON_CITY_NEW_CONNECTIONS_SYNONYM": {
+        "target": {
+            "object": "H2O/H2O_CON_CITY_NEW_CONNECTIONS",
+            "schema": "_SYS_BIC"
+        }
+    },
+    "H2O_CON_ZONE_NEW_CONNECTIONS_SYNONYM": {
+        "target": {
+            "object": "H2O/H2O_CON_ZONE_NEW_CONNECTIONS",
+            "schema": "_SYS_BIC"
+        }
+    },
+    "H2O_LEAKAGE_CALC_SYNONYM": {
+        "target": {
+            "object": "H2O/H20_Leakage",
+            "schema": "_SYS_BIC"
+        }
+    },
+    "H2O_ADMIN_NEW_CUST_CONNECTIONS_SYNONYM": {
+        "target": {
+            "object": "H2O/H2O_ADMIN_NEW_CUST_CONNECTIONS",
             "schema": "_SYS_BIC"
         }
     }

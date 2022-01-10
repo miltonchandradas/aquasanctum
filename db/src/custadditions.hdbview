@@ -1,0 +1,16 @@
+VIEW "AQUA_CUST_ADDITIONS" AS
+SELECT 
+	"CustAddKey" as CUSTADDKEY,
+	"Board" as BOARD,
+	"Zone" as ZONE,
+	"City" as CITY,
+	"State" as STATE,
+	"Country" as COUNTRY,
+	"Month" as MONTH,
+	"Year" as YEAR,
+	"NewCustomerCount" as NEWCUSTOMERCOUNT,
+	"RevIncrease" as REVINCREASE,
+	"Currency" as CURRENCY,
+	"CreatedBy" as CREATEDBY,
+	"CreatedTimestamp" as CREATEDTIMESTAMP
+FROM "H2O_CUST_ADDITIONS_SYNONYM"

@@ -1,0 +1,7 @@
+VIEW "AQUA_CITY_NEW_CONNECTIONS" as 
+SELECT
+    "City" as CITY,
+    "Currency" as CURRENCY,
+    "NewCustomerCount" as NEWCUSTOMERCOUNT,
+    "RevIncrease" as REVINCREASE
+FROM "H2O_CON_CITY_NEW_CONNECTIONS_SYNONYM"

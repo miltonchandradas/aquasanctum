@@ -1,0 +1,20 @@
+VIEW "AQUA_LEAKAGE" as 
+SELECT
+	"LeakageKey" as LEAKAGEKEY,
+	"Board" as BOARD,
+	"Zone" as ZONE,
+	"City" as CITY,
+	"State" as STATE,
+	"Country" as COUNTRY,
+	"Month" as MONTH,
+	"Year" as YEAR,
+	"DetectedLeaksCount" as DETECTEDLEAKSCOUNT,
+	"FixedLeaksCount" as FIXEDLEAKSCOUNT,
+	"SavedWater" as SAVEDWATER,
+	"SavedWaterUoM" as SAVEDWATERUOM,
+	"NewCustomerCount" as NEWCUSTOMERCOUNT,
+	"RevIncrease" as REVINCREASE,
+	"Currency" as CURRENCY,
+	"CreatedBy" as CREATEDBY,
+	"CreatedTimestamp" as CREATEDTIMESTAMP
+FROM "H2O_LEAKAGE_SYNONYM"

@@ -1,5 +1,501 @@
 {
   "definitions": {
+    "AQUA_ADMIN_NEW_CUST_CONNECTIONS": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "elements": {
+        "Board": {
+          "@title": "BOARD",
+          "key": true,
+          "type": "cds.String",
+          "length": 80
+        },
+        "Zone": {
+          "@title": "ZONE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "City": {
+          "@title": "CITY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "State": {
+          "@title": "STATE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Country": {
+          "@title": "COUNTRY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Month": {
+          "@title": "MONTH",
+          "type": "cds.String",
+          "length": 3
+        },
+        "Year": {
+          "@title": "YEAR",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "CustAddKey": {
+          "@title": "CUSTADDKEY",
+          "type": "cds.String",
+          "length": 16
+        },
+        "NewCustomerCount": {
+          "@title": "NEWCUSTOMERCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "RevIncrease": {
+          "@title": "REVINCREASE",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        }
+      }
+    },
+    "AQUA_LEAKAGE_CALC": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "elements": {
+        "City": {
+          "@title": "CITY",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "SavedWaterUoM": {
+          "@title": "SAVEDWATERUOM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "DetectedLeaksCount": {
+          "@title": "DETECTEDLEAKSCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "FixedLeaksCount": {
+          "@title": "FIXEDLEAKSCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "SavedWater": {
+          "@title": "SAVEDWATER",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        },
+        "SavedRevenue": {
+          "@title": "SAVEDREVENUE",
+          "type": "cds.Decimal",
+          "precision": 20
+        }
+      }
+    },
+    "AQUA_ZONE_NEW_CONNECTIONS": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "elements": {
+        "Board": {
+          "@title": "BOARD",
+          "key": true,
+          "type": "cds.String",
+          "length": 80
+        },
+        "Zone": {
+          "@title": "ZONE",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "NewCustomerCount": {
+          "@title": "NEWCUSTOMERCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "RevIncrease": {
+          "@title": "REVINCREASE",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        }
+      }
+    },
+    "AQUA_CITY_NEW_CONNECTIONS": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "elements": {
+        "City": {
+          "@title": "CITY",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "NewCustomerCount": {
+          "@title": "NEWCUSTOMERCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "RevIncrease": {
+          "@title": "REVINCREASE",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        }
+      }
+    },
+    "AQUA_LATEST_LEAKAGE_DATA": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "elements": {
+        "FmID": {
+          "@title": "FmID",
+          "key": true,
+          "type": "cds.String",
+          "length": 16
+        },
+        "Timestamp": {
+          "@title": "TIMESTAMP",
+          "type": "cds.Timestamp"
+        },
+        "FmDesc": {
+          "@title": "FMDESC",
+          "type": "cds.String",
+          "length": 80
+        },
+        "FmType": {
+          "@title": "FMTYPE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmZone": {
+          "@title": "FMZONE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmCity": {
+          "@title": "FMCITY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmState": {
+          "@title": "FMSTATE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmCountry": {
+          "@title": "FMCOUNTRY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmLatitude": {
+          "@title": "FMLATITUDE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmLongitude": {
+          "@title": "FMLONGITUDE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "SourceFmID": {
+          "@title": "SOURCEFMID",
+          "type": "cds.String",
+          "length": 16
+        },
+        "TechnicianID": {
+          "@title": "TECHNICIANID",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WaterFlowUoM": {
+          "@title": "WATERFLOWUOM",
+          "type": "cds.String",
+          "length": 12
+        },
+        "Supply": {
+          "@title": "SUPPLY",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        },
+        "Consumption": {
+          "@title": "CONSUMPTION",
+          "type": "cds.Double"
+        },
+        "Leakage": {
+          "@title": "LEAKAGE",
+          "type": "cds.Double"
+        },
+        "LeakPercentage": {
+          "@title": "LEAKPERCENTAGE",
+          "type": "cds.Decimal",
+          "precision": 34,
+          "scale": 2
+        },
+        "RevenueLoss": {
+          "@title": "REVENUELOSS",
+          "type": "cds.Double"
+        }
+      }
+    },
+    "AQUA_CON_LEAKAGE_DATA": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "elements": {
+        "FmID": {
+          "@title": "FmID",
+          "key": true,
+          "type": "cds.String",
+          "length": 16
+        },
+        "Timestamp": {
+          "@title": "TIMESTAMP",
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "FmDesc": {
+          "@title": "FMDESC",
+          "type": "cds.String",
+          "length": 80
+        },
+        "FmType": {
+          "@title": "FMTYPE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmZone": {
+          "@title": "FMZONE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmCity": {
+          "@title": "FMCITY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmState": {
+          "@title": "FMSTATE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmCountry": {
+          "@title": "FMCOUNTRY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmLatitude": {
+          "@title": "FMLATITUDE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmLongitude": {
+          "@title": "FMLONGITUDE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "SourceFmID": {
+          "@title": "SOURCEFMID",
+          "type": "cds.String",
+          "length": 16
+        },
+        "TechnicianID": {
+          "@title": "TECHNICIANID",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WaterFlowUoM": {
+          "@title": "WATERFLOWUOM",
+          "type": "cds.String",
+          "length": 12
+        },
+        "Month": {
+          "@title": "MONTH",
+          "type": "cds.String",
+          "length": 12
+        },
+        "Date": {
+          "@title": "DATE",
+          "type": "cds.String",
+          "length": 12
+        },
+        "Supply": {
+          "@title": "SUPPLY",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        },
+        "Consumption": {
+          "@title": "CONSUMPTION",
+          "type": "cds.Double"
+        },
+        "Leakage": {
+          "@title": "LEAKAGE",
+          "type": "cds.Double"
+        },
+        "LeakPercentage": {
+          "@title": "LEAKPERCENTAGE",
+          "type": "cds.Decimal",
+          "precision": 34,
+          "scale": 2
+        },
+        "RevenueLoss": {
+          "@title": "REVENUELOSS",
+          "type": "cds.Double"
+        }
+      }
+    },
+    "AQUA_IOT": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "elements": {
+        "C_TIMESTAMP": {
+          "@title": "C_TIMESTAMP",
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "C_FLOWMETERID": {
+          "@title": "C_FLOWMETERID",
+          "key": true,
+          "type": "cds.String",
+          "length": 16
+        },
+        "C_FLOWVALUE": {
+          "@title": "C_FLOWVALUE",
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        }
+      }
+    },
+    "AQUA_LEAKAGE": {
+      "kind": "entity",
+      "@cds.persistence.exists": true,
+      "elements": {
+        "LeakageKey": {
+          "@title": "LEAKAGEKEY",
+          "key": true,
+          "type": "cds.String",
+          "length": 16
+        },
+        "Board": {
+          "@title": "BOARD",
+          "type": "cds.String",
+          "length": 80
+        },
+        "Zone": {
+          "@title": "ZONE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "City": {
+          "@title": "CITY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "State": {
+          "@title": "STATE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Country": {
+          "@title": "COUNTRY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Month": {
+          "@title": "MONTH",
+          "type": "cds.String",
+          "length": 3
+        },
+        "Year": {
+          "@title": "YEAR",
+          "type": "cds.String",
+          "length": 4
+        },
+        "DetectedLeaksCount": {
+          "@title": "DETECTEDLEAKSCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "FixedLeaksCount": {
+          "@title": "FIXEDLEAKSCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "SavedWater": {
+          "@title": "SAVEDWATER",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        },
+        "SavedWaterUoM": {
+          "@title": "SAVEDWATERUOM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "NewCustomerCount": {
+          "@title": "NEWCUSTOMERCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "RevIncrease": {
+          "@title": "REVINCREASE",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "CreatedBy": {
+          "@title": "CREATEDBY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "CreatedTimestamp": {
+          "@title": "CREATEDTIMESTAMP",
+          "type": "cds.Timestamp"
+        }
+      }
+    },
     "AQUA_FLOWMETER_DATA_METRICS": {
       "kind": "entity",
       "@cds.persistence.exists": true,
@@ -158,73 +654,75 @@
         }
       }
     },
-    "AQUA_CHILDFLOWMETERS": {
+    "AQUA_CUST_ADDITIONS": {
       "kind": "entity",
       "@cds.persistence.exists": true,
       "elements": {
-        "FmID": {
+        "CustAddKey": {
+          "@title": "CUSTADDKEY",
           "key": true,
           "type": "cds.String",
           "length": 16
         },
-        "FmDesc": {
+        "Board": {
+          "@title": "BOARD",
           "type": "cds.String",
           "length": 80
         },
-        "FmType": {
+        "Zone": {
+          "@title": "ZONE",
           "type": "cds.String",
           "length": 40
         },
-        "FmZone": {
+        "City": {
+          "@title": "CITY",
           "type": "cds.String",
           "length": 40
         },
-        "FmCity": {
+        "State": {
+          "@title": "STATE",
           "type": "cds.String",
           "length": 40
         },
-        "FmState": {
+        "Country": {
+          "@title": "COUNTRY",
           "type": "cds.String",
           "length": 40
         },
-        "FmCountry": {
-          "type": "cds.String",
-          "length": 40
-        },
-        "FmLatitude": {
-          "type": "cds.String",
-          "length": 40
-        },
-        "FmLongitude": {
-          "type": "cds.String",
-          "length": 40
-        },
-        "SourceFmID": {
-          "type": "cds.String",
-          "length": 16
-        },
-        "TechnicianID": {
-          "type": "cds.String",
-          "length": 4
-        },
-        "CURRENCY": {
+        "Month": {
+          "@title": "MONTH",
           "type": "cds.String",
           "length": 3
         },
-        "WATERFLOWUOM": {
+        "Year": {
+          "@title": "YEAR",
           "type": "cds.String",
-          "length": 12
+          "length": 4
         },
-        "END_BRANCH": {
+        "NewCustomerCount": {
+          "@title": "NEWCUSTOMERCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "RevIncrease": {
+          "@title": "REVINCREASE",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        },
+        "Currency": {
+          "@title": "CURRENCY",
           "type": "cds.String",
-          "length": 1
+          "length": 3
         },
         "CreatedBy": {
+          "@title": "CREATEDBY",
           "type": "cds.String",
           "length": 40
         },
-        "CreatedTimeStamp": {
-          "type": "cds.DateTime"
+        "CreatedTimestamp": {
+          "@title": "CREATEDTIMESTAMP",
+          "type": "cds.Timestamp"
         }
       }
     },
@@ -349,121 +847,11 @@
         }
       }
     },
-    "AQUA_CON_LEAKAGE_DATA": {
-      "kind": "entity",
-      "@cds.persistence.exists": true,
-      "elements": {
-        "FmID": {
-          "@title": "FmID",
-          "key": true,
-          "type": "cds.String",
-          "length": 16
-        },
-        "TIMESTAMP": {
-          "@title": "TIMESTAMP",
-          "type": "cds.Timestamp"
-        },
-        "FMDESC": {
-          "@title": "FMDESC",
-          "type": "cds.String",
-          "length": 80
-        },
-        "FMTYPE": {
-          "@title": "FMTYPE",
-          "type": "cds.String",
-          "length": 40
-        },
-        "FMZONE": {
-          "@title": "FMZONE",
-          "type": "cds.String",
-          "length": 40
-        },
-        "FMCITY": {
-          "@title": "FMCITY",
-          "type": "cds.String",
-          "length": 40
-        },
-        "FMSTATE": {
-          "@title": "FMSTATE",
-          "type": "cds.String",
-          "length": 40
-        },
-        "FMCOUNTRY": {
-          "@title": "FMCOUNTRY",
-          "type": "cds.String",
-          "length": 40
-        },
-        "FMLATITUDE": {
-          "@title": "FMLATITUDE",
-          "type": "cds.String",
-          "length": 40
-        },
-        "FMLONGITUDE": {
-          "@title": "FMLONGITUDE",
-          "type": "cds.String",
-          "length": 40
-        },
-        "SOURCEFMID": {
-          "@title": "SOURCEFMID",
-          "type": "cds.String",
-          "length": 16
-        },
-        "TECHNICIANID": {
-          "@title": "TECHNICIANID",
-          "type": "cds.String",
-          "length": 4
-        },
-        "CURRENCY": {
-          "@title": "CURRENCY",
-          "type": "cds.String",
-          "length": 3
-        },
-        "WATERFLOWUOM": {
-          "@title": "WATERFLOWUOM",
-          "type": "cds.String",
-          "length": 12
-        },
-        "MONTH": {
-          "@title": "MONTH",
-          "type": "cds.String",
-          "length": 12
-        },
-        "DATE": {
-          "@title": "DATE",
-          "type": "cds.String",
-          "length": 12
-        },
-        "SUPPLY": {
-          "@title": "SUPPLY",
-          "type": "cds.Decimal",
-          "precision": 10,
-          "scale": 2
-        },
-        "CONSUMPTION": {
-          "@title": "CONSUMPTION",
-          "type": "cds.Double"
-        },
-        "LEAKAGE": {
-          "@title": "LEAKAGE",
-          "type": "cds.Double"
-        },
-        "LEAKPERCENTAGE": {
-          "@title": "LEAKPERCENTAGE",
-          "type": "cds.Decimal",
-          "precision": 34,
-          "scale": 2
-        },
-        "REVENUELOSS": {
-          "@title": "REVENUELOSS",
-          "type": "cds.Double"
-        }
-      }
-    },
     "AQUASERVICE": {
       "@source": "aquasanctum_service.cds",
       "kind": "service"
     },
-    "AQUASERVICE.FlowmeterDataMetrics": {
+    "AQUASERVICE.H2OFlowmeterData": {
       "kind": "entity",
       "@readonly": true,
       "projection": {
@@ -641,9 +1029,9 @@
       "projection": {
         "from": {
           "ref": [
-            "AQUA_CHILDFLOWMETERS"
+            "AQUA_FLOWMETERS"
           ],
-          "as": "AquaChildFlowMeters"
+          "as": "AquaFlowMeters"
         }
       },
       "elements": {
@@ -848,7 +1236,97 @@
         }
       }
     },
-    "AQUASERVICE.ConLeakageData": {
+    "AQUASERVICE.ConsumerMeters": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_CON_FLOWMETERS"
+          ],
+          "as": "AquaConFlowMeters"
+        }
+      },
+      "elements": {
+        "ConFmID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 16
+        },
+        "ConFmType": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "ConFirstname": {
+          "type": "cds.String",
+          "length": 80
+        },
+        "ConLastname": {
+          "type": "cds.String",
+          "length": 80
+        },
+        "ConAddress1": {
+          "type": "cds.String",
+          "length": 80
+        },
+        "ConAddress2": {
+          "type": "cds.String",
+          "length": 80
+        },
+        "ConFmZone": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "ConFmCity": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "ConFmState": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "ConFmCountry": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "ConHouseArea": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "ConHouseAreaUoM": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "ConHouseNoOfMem": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "AccumCons": {
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        },
+        "AccumConsUoM": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "WaterQuality": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "SourceFmID": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "CreatedBy": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "CreatedTimeStamp": {
+          "type": "cds.DateTime"
+        }
+      }
+    },
+    "AQUASERVICE.H2OConLeakageData": {
       "kind": "entity",
       "projection": {
         "from": {
@@ -865,103 +1343,712 @@
           "type": "cds.String",
           "length": 16
         },
-        "TIMESTAMP": {
+        "Timestamp": {
           "@title": "TIMESTAMP",
+          "key": true,
           "type": "cds.Timestamp"
         },
-        "FMDESC": {
+        "FmDesc": {
           "@title": "FMDESC",
           "type": "cds.String",
           "length": 80
         },
-        "FMTYPE": {
+        "FmType": {
           "@title": "FMTYPE",
           "type": "cds.String",
           "length": 40
         },
-        "FMZONE": {
+        "FmZone": {
           "@title": "FMZONE",
           "type": "cds.String",
           "length": 40
         },
-        "FMCITY": {
+        "FmCity": {
           "@title": "FMCITY",
           "type": "cds.String",
           "length": 40
         },
-        "FMSTATE": {
+        "FmState": {
           "@title": "FMSTATE",
           "type": "cds.String",
           "length": 40
         },
-        "FMCOUNTRY": {
+        "FmCountry": {
           "@title": "FMCOUNTRY",
           "type": "cds.String",
           "length": 40
         },
-        "FMLATITUDE": {
+        "FmLatitude": {
           "@title": "FMLATITUDE",
           "type": "cds.String",
           "length": 40
         },
-        "FMLONGITUDE": {
+        "FmLongitude": {
           "@title": "FMLONGITUDE",
           "type": "cds.String",
           "length": 40
         },
-        "SOURCEFMID": {
+        "SourceFmID": {
           "@title": "SOURCEFMID",
           "type": "cds.String",
           "length": 16
         },
-        "TECHNICIANID": {
+        "TechnicianID": {
           "@title": "TECHNICIANID",
           "type": "cds.String",
           "length": 4
         },
-        "CURRENCY": {
+        "Currency": {
           "@title": "CURRENCY",
           "type": "cds.String",
           "length": 3
         },
-        "WATERFLOWUOM": {
+        "WaterFlowUoM": {
           "@title": "WATERFLOWUOM",
           "type": "cds.String",
           "length": 12
         },
-        "MONTH": {
+        "Month": {
           "@title": "MONTH",
           "type": "cds.String",
           "length": 12
         },
-        "DATE": {
+        "Date": {
           "@title": "DATE",
           "type": "cds.String",
           "length": 12
         },
-        "SUPPLY": {
+        "Supply": {
           "@title": "SUPPLY",
           "type": "cds.Decimal",
           "precision": 10,
           "scale": 2
         },
-        "CONSUMPTION": {
+        "Consumption": {
           "@title": "CONSUMPTION",
           "type": "cds.Double"
         },
-        "LEAKAGE": {
+        "Leakage": {
           "@title": "LEAKAGE",
           "type": "cds.Double"
         },
-        "LEAKPERCENTAGE": {
+        "LeakPercentage": {
           "@title": "LEAKPERCENTAGE",
           "type": "cds.Decimal",
           "precision": 34,
           "scale": 2
         },
-        "REVENUELOSS": {
+        "RevenueLoss": {
           "@title": "REVENUELOSS",
           "type": "cds.Double"
+        }
+      }
+    },
+    "AQUASERVICE.NewCustAdditions": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_CUST_ADDITIONS"
+          ],
+          "as": "AquaCustAdditions"
+        }
+      },
+      "elements": {
+        "CustAddKey": {
+          "@title": "CUSTADDKEY",
+          "key": true,
+          "type": "cds.String",
+          "length": 16
+        },
+        "Board": {
+          "@title": "BOARD",
+          "type": "cds.String",
+          "length": 80
+        },
+        "Zone": {
+          "@title": "ZONE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "City": {
+          "@title": "CITY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "State": {
+          "@title": "STATE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Country": {
+          "@title": "COUNTRY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Month": {
+          "@title": "MONTH",
+          "type": "cds.String",
+          "length": 3
+        },
+        "Year": {
+          "@title": "YEAR",
+          "type": "cds.String",
+          "length": 4
+        },
+        "NewCustomerCount": {
+          "@title": "NEWCUSTOMERCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "RevIncrease": {
+          "@title": "REVINCREASE",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "CreatedBy": {
+          "@title": "CREATEDBY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "CreatedTimestamp": {
+          "@title": "CREATEDTIMESTAMP",
+          "type": "cds.Timestamp"
+        }
+      }
+    },
+    "AQUASERVICE.PhysicalLeakage": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_LEAKAGE"
+          ],
+          "as": "AquaLeakage"
+        }
+      },
+      "elements": {
+        "LeakageKey": {
+          "@title": "LEAKAGEKEY",
+          "key": true,
+          "type": "cds.String",
+          "length": 16
+        },
+        "Board": {
+          "@title": "BOARD",
+          "type": "cds.String",
+          "length": 80
+        },
+        "Zone": {
+          "@title": "ZONE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "City": {
+          "@title": "CITY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "State": {
+          "@title": "STATE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Country": {
+          "@title": "COUNTRY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Month": {
+          "@title": "MONTH",
+          "type": "cds.String",
+          "length": 3
+        },
+        "Year": {
+          "@title": "YEAR",
+          "type": "cds.String",
+          "length": 4
+        },
+        "DetectedLeaksCount": {
+          "@title": "DETECTEDLEAKSCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "FixedLeaksCount": {
+          "@title": "FIXEDLEAKSCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "SavedWater": {
+          "@title": "SAVEDWATER",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        },
+        "SavedWaterUoM": {
+          "@title": "SAVEDWATERUOM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "NewCustomerCount": {
+          "@title": "NEWCUSTOMERCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "RevIncrease": {
+          "@title": "REVINCREASE",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "CreatedBy": {
+          "@title": "CREATEDBY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "CreatedTimestamp": {
+          "@title": "CREATEDTIMESTAMP",
+          "type": "cds.Timestamp"
+        }
+      }
+    },
+    "AQUASERVICE.Flowvalues": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_IOT"
+          ],
+          "as": "AquaIoT"
+        }
+      },
+      "elements": {
+        "C_TIMESTAMP": {
+          "@title": "C_TIMESTAMP",
+          "key": true,
+          "type": "cds.Timestamp"
+        },
+        "C_FLOWMETERID": {
+          "@title": "C_FLOWMETERID",
+          "key": true,
+          "type": "cds.String",
+          "length": 16
+        },
+        "C_FLOWVALUE": {
+          "@title": "C_FLOWVALUE",
+          "key": true,
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        }
+      }
+    },
+    "AQUASERVICE.H2OLatestLeakageData": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_LATEST_LEAKAGE_DATA"
+          ],
+          "as": "AquaLatestLeakageData"
+        }
+      },
+      "elements": {
+        "FmID": {
+          "@title": "FmID",
+          "key": true,
+          "type": "cds.String",
+          "length": 16
+        },
+        "Timestamp": {
+          "@title": "TIMESTAMP",
+          "type": "cds.Timestamp"
+        },
+        "FmDesc": {
+          "@title": "FMDESC",
+          "type": "cds.String",
+          "length": 80
+        },
+        "FmType": {
+          "@title": "FMTYPE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmZone": {
+          "@title": "FMZONE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmCity": {
+          "@title": "FMCITY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmState": {
+          "@title": "FMSTATE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmCountry": {
+          "@title": "FMCOUNTRY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmLatitude": {
+          "@title": "FMLATITUDE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmLongitude": {
+          "@title": "FMLONGITUDE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "SourceFmID": {
+          "@title": "SOURCEFMID",
+          "type": "cds.String",
+          "length": 16
+        },
+        "TechnicianID": {
+          "@title": "TECHNICIANID",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "WaterFlowUoM": {
+          "@title": "WATERFLOWUOM",
+          "type": "cds.String",
+          "length": 12
+        },
+        "Supply": {
+          "@title": "SUPPLY",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        },
+        "Consumption": {
+          "@title": "CONSUMPTION",
+          "type": "cds.Double"
+        },
+        "Leakage": {
+          "@title": "LEAKAGE",
+          "type": "cds.Double"
+        },
+        "LeakPercentage": {
+          "@title": "LEAKPERCENTAGE",
+          "type": "cds.Decimal",
+          "precision": 34,
+          "scale": 2
+        },
+        "RevenueLoss": {
+          "@title": "REVENUELOSS",
+          "type": "cds.Double"
+        }
+      }
+    },
+    "AQUASERVICE.H2OCityNewConnections": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_CITY_NEW_CONNECTIONS"
+          ],
+          "as": "AquaCityNewConnections"
+        }
+      },
+      "elements": {
+        "City": {
+          "@title": "CITY",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "NewCustomerCount": {
+          "@title": "NEWCUSTOMERCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "RevIncrease": {
+          "@title": "REVINCREASE",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        }
+      }
+    },
+    "AQUASERVICE.H2OZoneNewConnections": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_ZONE_NEW_CONNECTIONS"
+          ],
+          "as": "AquaZoneNewConnections"
+        }
+      },
+      "elements": {
+        "Board": {
+          "@title": "BOARD",
+          "key": true,
+          "type": "cds.String",
+          "length": 80
+        },
+        "Zone": {
+          "@title": "ZONE",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "NewCustomerCount": {
+          "@title": "NEWCUSTOMERCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "RevIncrease": {
+          "@title": "REVINCREASE",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        }
+      }
+    },
+    "AQUASERVICE.H2OCityLeakages": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_LEAKAGE_CALC"
+          ],
+          "as": "AquaLeakageCalc"
+        }
+      },
+      "elements": {
+        "City": {
+          "@title": "CITY",
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "SavedWaterUoM": {
+          "@title": "SAVEDWATERUOM",
+          "type": "cds.String",
+          "length": 6
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "DetectedLeaksCount": {
+          "@title": "DETECTEDLEAKSCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "FixedLeaksCount": {
+          "@title": "FIXEDLEAKSCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "SavedWater": {
+          "@title": "SAVEDWATER",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        },
+        "SavedRevenue": {
+          "@title": "SAVEDREVENUE",
+          "type": "cds.Decimal",
+          "precision": 20
+        }
+      }
+    },
+    "AQUASERVICE.H2OAdminNewConnections": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_ADMIN_NEW_CUST_CONNECTIONS"
+          ],
+          "as": "AquaAdminNewCustConnections"
+        }
+      },
+      "elements": {
+        "Board": {
+          "@title": "BOARD",
+          "key": true,
+          "type": "cds.String",
+          "length": 80
+        },
+        "Zone": {
+          "@title": "ZONE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "City": {
+          "@title": "CITY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "State": {
+          "@title": "STATE",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Country": {
+          "@title": "COUNTRY",
+          "type": "cds.String",
+          "length": 40
+        },
+        "Month": {
+          "@title": "MONTH",
+          "type": "cds.String",
+          "length": 3
+        },
+        "Year": {
+          "@title": "YEAR",
+          "type": "cds.String",
+          "length": 4
+        },
+        "Currency": {
+          "@title": "CURRENCY",
+          "type": "cds.String",
+          "length": 3
+        },
+        "CustAddKey": {
+          "@title": "CUSTADDKEY",
+          "type": "cds.String",
+          "length": 16
+        },
+        "NewCustomerCount": {
+          "@title": "NEWCUSTOMERCOUNT",
+          "type": "cds.Decimal",
+          "precision": 10
+        },
+        "RevIncrease": {
+          "@title": "REVINCREASE",
+          "type": "cds.Decimal",
+          "precision": 10,
+          "scale": 2
+        }
+      }
+    },
+    "AQUASERVICE.H2OLatestFlowValues": {
+      "kind": "entity",
+      "projection": {
+        "from": {
+          "ref": [
+            "AQUA_FLOWMETER_DATA_METRICS"
+          ],
+          "as": "AquaFlowMeterDataMetrics"
+        }
+      },
+      "elements": {
+        "FmID": {
+          "key": true,
+          "type": "cds.String",
+          "length": 16
+        },
+        "FmDesc": {
+          "type": "cds.String",
+          "length": 80
+        },
+        "FmType": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmZone": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmCity": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmState": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmCountry": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmLatitude": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "FmLongitude": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "SourceFmID": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "TechnicianID": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Currency": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "WaterFlowUoM": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "SourceFmDesc": {
+          "type": "cds.String",
+          "length": 80
+        },
+        "SourceFmLatitude": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "SourceFmLongitude": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Supply": {
+          "type": "cds.Double"
+        },
+        "Leakage": {
+          "type": "cds.Double"
+        },
+        "LeakPercentage": {
+          "type": "cds.Decimal",
+          "precision": 34,
+          "scale": 2
+        },
+        "RevenueLoss": {
+          "type": "cds.Double"
+        },
+        "Timestamp": {
+          "type": "cds.DateTime"
         }
       }
     }

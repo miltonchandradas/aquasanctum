@@ -21,9 +21,11 @@ modules:
  - name: aquasanctum-srv
  # ------------------------------------------------------------
    type: nodejs
-   path: srv
+   path: .
    parameters:
      buildpack: nodejs_buildpack
+   build-parameters:
+     ignore: ["*default-env.json", "./db/*.env*", "/node_modules", "./db/node_modules", "./app"] 
    requires:
     # Resources extracted from CAP configuration
     - name: aquasanctum-db
@@ -39,6 +41,8 @@ modules:
    path: db  
    parameters:
      buildpack: nodejs_buildpack
+   build-parameters:
+     ignore: ["default-env.json", ".env", "*node_modules*"]
    requires:
     # 'hana' and 'xsuaa' resources extracted from CAP configuration
     - name: aquasanctum-db

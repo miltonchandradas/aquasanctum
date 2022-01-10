@@ -1,0 +1,22 @@
+VIEW "AQUA_LATEST_LEAKAGE_DATA" AS
+SELECT 
+	"FmID" As FMID,
+	"Timestamp" as TIMESTAMP,
+	"FmDesc" as FMDESC,
+	"FmType" as  FMTYPE,
+	"FmZone" as FMZONE,
+	"FmCity" as FMCITY,
+	"FmState" as FMSTATE,
+	"FmCountry" as FMCOUNTRY,
+	"FmLatitude" as FMLATITUDE,
+	"FmLongitude" as FMLONGITUDE,
+	"SourceFmID" as SOURCEFMID,
+	"TechnicianID" as TECHNICIANID,
+	"Currency" as CURRENCY,
+	"WaterFlowUoM" as WATERFLOWUOM,
+	"Supply" as SUPPLY,
+	"Consumption" as CONSUMPTION,
+	"Leakage" as LEAKAGE,
+	"LeakPercentage" as LEAKPERCENTAGE,
+	"RevenueLoss" as REVENUELOSS
+FROM "H2O_LATEST_LEAKAGE_DATA_SYNONYM";

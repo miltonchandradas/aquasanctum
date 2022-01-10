@@ -1,0 +1,10 @@
+VIEW "AQUA_LEAKAGE_CALC" AS
+SELECT
+"City" as CITY,
+"SavedWaterUoM" as SAVEDWATERUOM,
+"Currency" as CURRENCY,
+"DetectedLeaksCount" as DETECTEDLEAKSCOUNT,
+"FixedLeaksCount" as FIXEDLEAKSCOUNT,
+"SavedWater" as SAVEDWATER,
+"SavedRevenue" as SAVEDREVENUE
+from "H2O_LEAKAGE_CALC_SYNONYM"
